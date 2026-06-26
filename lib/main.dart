@@ -10,81 +10,72 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Removes the red "Debug" corner banner
-      theme: ThemeData(useMaterial3: true),
-      home: const HomeScreen(),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        // The AppBar goes exactly here
+          appBar: AppBar(
+            title: const Text('Signup UI'),
+            backgroundColor: Colors.blue,
+            centerTitle: true, // Centers the title text on the bar
+          ),
+          body: Center(
+            child: Column(
+              children: [
+                Divider(color: Colors.black,height: 10,),
+                const Text("Profile"),
+                Divider(color: Colors.black,height: 10,),
+                CircleAvatar(radius: 50,),
+                const Text("Madan Neupane"),
+                const Text("Bsc CSIT Student"),
+                Divider(height: 10, color: Colors.black,),
+                Row(
+                    children: [
+                      Icon(Icons.email),
+                      const Text("dnissingle@gmail.com"),
+                    ]
+                ),
+                Row(
+                    children: [
+                      Icon(Icons.phone_android),
+                      const Text("9808021207"),
+                    ]
+                ),
+                Row(
+                    children: [
+                      Icon(Icons.location_pin),
+                      const Text("Nepal"),
+                    ]
+                ),
+                Divider(height: 10, color: Colors.black,),
+                Row(
+                  //mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text("Skills"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.circle),
+                    const Text("Dart"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.circle),
+                    const Text("Flutter"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.circle),
+                    const Text("Git"),
+                  ],
+                )
+                //Divider(height: 10, color: Colors.black,),
+              ],
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(50),
-        child: Column(
-
-          children: [
-            SizedBox(height: 10),
-            const Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/dn.jpg'),
-                radius: 50,
-              ),
             ),
-            Text(
-              'DN',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            Text('Bsc CSIT Student',
-              style: TextStyle(fontSize: 20),),
-
-            Text('Learning Flutter',
-                style: TextStyle(fontSize: 20)),
-            Divider(
-              height: 10,
-              color: Colors.grey[850],
-            ),
-            Text(
-              'Email: dnissingle@gmaill.com',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            Text('Phone: 9808021207',
-              style: TextStyle(fontSize: 20),),
-
-            Text('Location: Banepa, Nepal',
-                style: TextStyle(fontSize: 20)),
-            Divider(
-              height: 10,
-              color: Colors.grey[850],
-            ),
-            Text(
-              'Skills:',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            Text('Dart',
-              style: TextStyle(fontSize: 20),),
-
-            Text('Flutter',
-                style: TextStyle(fontSize: 20)),
-            Text('Git',
-              style: TextStyle(fontSize: 20),),
-
-            Divider(
-              height: 10,
-              color: Colors.grey[850],
-            ),
-
-          ],
-        ),
+          )
       ),
     );
   }
